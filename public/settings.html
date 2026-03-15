@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podešavanja - DayNight Admin</title>
+    <script>if (localStorage.getItem('daynight-theme') === 'carbon') { document.documentElement.classList.add('carbon'); }</script>
+    <link rel="stylesheet" href="templatemo-daynight-style.css">
+</head>
+
+<body>
+
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg></div>
+                Demo
+            </a>
+            <button class="mobile-menu-close" onclick="closeMobileMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>Početna strana</a>
+            <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>Dnevnici</a>
+            <a href="inbox.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>Inbox</a>
+            <a href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7" />
+                    <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                </svg>Analytics</a>
+            <a href="settings.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>Podešavanja</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="login.html" class="mobile-logout-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                Logout
+            </a>
+            <div class="theme-toggle">
+                <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')"><svg viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg></button>
+                <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')"><svg viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg></div>
+                        Demo
+                    </a>
+                    <div class="nav-menu">
+                        <div class="nav-item"><a href="index.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                                </svg>Početna strana</a></div>
+                        <div class="nav-item"><a href="projects.html" class="nav-link"><svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                                </svg>Dnevnici</a></div>
+                        <div class="nav-item"><a href="inbox.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>Inbox</a></div>
+                        <div class="nav-item"><a href="analytics.html" class="nav-link"><svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                                </svg>Analytics</a></div>
+                        <div class="nav-item"><a href="settings.html" class="nav-link active"><svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>Podešavanja</a></div>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="theme-toggle">
+                        <button class="theme-btn theme-btn-snow active" onclick="setTheme('snow')"><svg
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg></button>
+                        <button class="theme-btn theme-btn-carbon" onclick="setTheme('carbon')"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg></button>
+                    </div>
+                    <button class="user-menu">
+                        <div class="user-avatar">I</div>
+                        <span class="user-name">IMP</span>
+                    </button>
+                    <a href="login.html" class="btn-logout" title="Logout">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                    </a>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="greeting">Podešavanja</h1>
+                <p class="greeting-sub">Upravljaj profilom i aplikacijom...</p>
+            </div>
+
+            <div class="settings-grid">
+
+                <!-- Korisnički profil -->
+                <div class="form-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Korisnički Profil</h3>
+                            <p class="card-subtitle">Osnovi podaci o korisniku</p>
+                        </div>
+                        <div class="avatar-upload">
+                            <div class="avatar-large">I</div>
+                            <div class="avatar-upload-btn">
+                                <button type="button" class="btn btn-primary btn-sm">Promeni sliku</button>
+                                <small>JPG, PNG — max 2MB</small>
+                            </div>
+                        </div>
+                        <form class="dashboard-form">
+                            <div class="form-group">
+                                <label>Ime i prezime:</label>
+                                <input type="text" value="IMP Korisnik" placeholder="Unesi ime...">
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" value="korisnik@example.com" placeholder="Unesi email...">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon:</label>
+                                <input type="tel" placeholder="+381 ...">
+                            </div>
+                            <div class="form-group">
+                                <label>Kompanija / Firma:</label>
+                                <input type="text" placeholder="Naziv firme...">
+                            </div>
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-primary">Sačuvaj izmene</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Promena lozinke -->
+                <div class="form-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Promena Lozinke</h3>
+                            <p class="card-subtitle">Ažuriraj pristupne podatke</p>
+                        </div>
+                        <form class="dashboard-form">
+                            <div class="form-group">
+                                <label>Trenutna lozinka:</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label>Nova lozinka:</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="form-group">
+                                <label>Potvrdi novu lozinku:</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-primary">Promeni lozinku</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Notifikacije -->
+                <div class="form-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Notifikacije</h3>
+                            <p class="card-subtitle">Upravljaj obaveštenjima</p>
+                        </div>
+                        <div class="settings-section">
+                            <div class="toggle-row">
+                                <div class="toggle-label">
+                                    Email obaveštenja
+                                    <small>Primaj sažetak dnevnih aktivnosti</small>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-row">
+                                <div class="toggle-label">
+                                    Novi unosi dnevnika
+                                    <small>Obaveštenje kada se doda novi dnevnik</small>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-row">
+                                <div class="toggle-label">
+                                    Podsetnik za necompletovane unose
+                                    <small>Dnevni podsetnik za nedovršene zapise</small>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-row">
+                                <div class="toggle-label">
+                                    Izveštaji — automatski export
+                                    <small>Mesečni PDF izveštaj na email</small>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="save-row">
+                            <button type="button" class="btn btn-primary">Sačuvaj</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opšta podešavanja -->
+                <div class="form-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Opšta Podešavanja</h3>
+                            <p class="card-subtitle">Jezik, zona i format datuma</p>
+                        </div>
+                        <form class="dashboard-form">
+                            <div class="form-group">
+                                <label>Jezik aplikacije:</label>
+                                <select>
+                                    <option value="sr" selected>Srpski</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Format datuma:</label>
+                                <select>
+                                    <option value="dd.mm.yyyy" selected>DD.MM.YYYY</option>
+                                    <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                    <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Vremenska zona:</label>
+                                <select>
+                                    <option value="europe/belgrade" selected>Europe/Belgrade (UTC+1)</option>
+                                    <option value="utc">UTC</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Podrazumevani status kvara:</label>
+                                <select>
+                                    <option value="potpunosti">Otklonjen u potpunosti</option>
+                                    <option value="delimicno">Otklonjen delimično</option>
+                                    <option value="nije">Nije otklonjen</option>
+                                </select>
+                            </div>
+                            <div class="btn-row">
+                                <button type="button" class="btn btn-primary">Sačuvaj</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Opasna zona -->
+                <div class="form-card form-card-full">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title card-title-danger">Opasna Zona</h3>
+                            <p class="card-subtitle">Nepovratne akcije — pažljivo!</p>
+                        </div>
+                        <div class="danger-zone-row">
+                            <div class="danger-zone">
+                                <h4>Obriši sve dnevnike</h4>
+                                <p>Trajno brisanje svih unetih građevinskih dnevnika. Ova akcija se ne može poništiti.
+                                </p>
+                                <button class="btn btn-danger">Obriši sve dnevnike</button>
+                            </div>
+                            <div class="danger-zone">
+                                <h4>Obriši nalog</h4>
+                                <p>Trajno brisanje korisničkog naloga i svih podataka vezanih za njega.</p>
+                                <button class="btn btn-danger">Obriši nalog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 DayNight Admin. Designed by <a href="https://www.templatemo.com" target="_blank"
+                    rel="nofollow">TemplateMo</a></p>
+        </footer>
+    </div>
+
+    <script src="templatemo-daynight-script.js"></script>
+</body>
+
+</html>
