@@ -4,32 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Dashboard - DayNight Admin</title>
-    <script>
-        // Prevent flash of white in dark mode - runs before CSS/page render
-        if (localStorage.getItem('daynight-theme') === 'carbon') {
-            document.documentElement.classList.add('carbon');
-        }
-    </script>
-=======
     <title>E-Građevinski Dnevnik</title>
     <script>if (localStorage.getItem('daynight-theme') === 'carbon') { document.documentElement.classList.add('carbon'); }</script>
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
     <link rel="stylesheet" href="templatemo-daynight-style.css">
 </head>
 
 <body>
-<<<<<<< HEAD
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay"></div>
-
-    <!-- Mobile Menu -->
-=======
 
     <div class="mobile-menu-overlay"></div>
 
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
     <div class="mobile-menu">
         <div class="mobile-menu-header">
             <a href="index.html" class="logo">
@@ -121,10 +104,6 @@
     </div>
 
     <div class="app-container">
-<<<<<<< HEAD
-        <!-- Top Navigation -->
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
         <nav class="top-nav">
             <div class="nav-container">
                 <div class="nav-left">
@@ -233,17 +212,9 @@
             </div>
         </nav>
 
-<<<<<<< HEAD
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Page Header -->
-            <div class="page-header">
-                <h1 class="greeting" id="greeting">E-Gradjevinski dnevnik</h1>
-=======
         <main class="main-content">
             <div class="page-header">
                 <h1 class="greeting" id="greeting">E-Građevinski dnevnik</h1>
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                 <p class="greeting-sub">Kako stvari napreduju....</p>
             </div>
 
@@ -254,43 +225,23 @@
                             <h3 class="card-title">Kreiraj Novi Unos</h3>
                             <p class="card-subtitle">Popuni ispod detaljnije</p>
                         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                         <form class="dashboard-form">
                             <div class="form-group">
                                 <label for="izvodjac_name">Izvođač radova:</label>
                                 <input type="text" id="izvodjac_name" placeholder="Unesi naziv izvođača..." required>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="objekat_name">Objekat:</label>
                                 <input type="text" id="objekat_name" placeholder="Unesi objekat..." required>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="mesto">Mesto:</label>
                                 <input type="text" id="mesto" placeholder="Unesi naziv mesta...">
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="investitor_name">Investitor:</label>
                                 <input type="text" id="investitor_name" placeholder="Unesi investitora..." required>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="dan">Dan:</label>
                                 <select id="dan">
@@ -303,42 +254,18 @@
                                     <option value="nedelja">Nedelja</option>
                                 </select>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="datum">Datum:</label>
                                 <input type="date" id="datum" required>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="radno_vreme_start">Radno vreme od:</label>
                                 <input type="time" id="radno_vreme_start" onchange="racunajSate()" required>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="radno_vreme_do">Radno vreme do:</label>
                                 <input type="time" id="radno_vreme_do" onchange="racunajSate()" required>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="form-group">
-                                <label for="podizvodjac_radova_name">Podizvođač radova:</label>
-                                <button type="submit" class="btn btn-primary">Unesi podizvođača...</button>
-                            </div>
-
-                            <div class="form-group">
-                                <p id="ispis"></p>
-                            </div>
-
-=======
                             <div class="form-group">
                                 <label for="podizvodjac_radova_name">Podizvođač radova:</label>
                                 <button type="button" class="btn btn-primary">Unesi podizvođača...</button>
@@ -346,22 +273,11 @@
                             <div class="form-group">
                                 <p id="ispis"></p>
                             </div>
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                             <div class="form-group">
                                 <label for="opis_posla">Opis posla:</label>
                                 <textarea name="opis_posla" id="opis_posla" placeholder="Unesi opis posla..." rows="6"
                                     required></textarea>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="form-group">
-                                <label for="status_kvara">Status kvara:</label>
-                                <select id="status_kvara">
-                                    <option value="" selected disabled>Odaberi status... </option>
-                                    <option value="status_kvara">Otklonjen u potpunosti</option>
-                                    <option value="status_kvara">Otklonjen delimično</option>
-                                    <option value="status_kvara">Nije otklonjen, neophodni dodatni radovi</option>
-=======
                             <div class="form-group">
                                 <label for="status_kvara">Status kvara:</label>
                                 <select id="status_kvara">
@@ -369,7 +285,6 @@
                                     <option value="potpunosti">Otklonjen u potpunosti</option>
                                     <option value="delimicno">Otklonjen delimično</option>
                                     <option value="nije">Nije otklonjen, neophodni dodatni radovi</option>
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
                                 </select>
                             </div>
                             <div class="btn-row">
@@ -385,12 +300,7 @@
             <p>&copy; 2026 DayNight Admin. Designed by <a href="https://www.templatemo.com" target="_blank"
                     rel="nofollow">TemplateMo</a></p>
         </footer>
-<<<<<<< HEAD
-
-    </div><!-- end .app-container -->
-=======
     </div>
->>>>>>> d7dc78b646dfd2ea188b2dc54728c194e4749300
 
     <script src="templatemo-daynight-script.js"></script>
 </body>
