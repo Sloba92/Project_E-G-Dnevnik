@@ -1,6 +1,6 @@
 const {Router} = require("express");
 const router = Router();
 
-router.get("/", require("../controlers/pages/renderIndex.js"));
+router.get("/", require("../controllers/pages/renderIndex.js"));
 
 module.exports = router;
