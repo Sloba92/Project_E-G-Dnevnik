@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Sloba92/Project_E-G-Dnevnik#readme",
   "dependencies": {
     "ejs": "^5.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongoose": "^9.3.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
