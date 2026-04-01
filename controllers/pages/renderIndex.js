@@ -1,5 +1,42 @@
 
-const renderIndex = (req, res) => { 
-    res.render("index");
-}
-module.exports = renderIndex;
+const express = require('express');
+const router = express.Router();
+const EvidencijaModel = require('../../models/EvidencijaModel');
+
+router.post('/controllers/pages/renderIndex.js', async (req, res) => {
+  try {
+    const {
+      izvodjac_radova,
+      objekat,
+      mesto,
+      investitor,
+      dan,
+      datum,
+      radno_vreme_pocetak,
+      radno_vreme_kraj,
+      ukupni_sati,
+      opis_posla,
+      status_kvara
+    } = req.body;
+
+    const newEvidencija = new EvidencijaModel({
+      izvodjac_radova,
+      objekat,
+      mesto,
+      investitor,
+      dan,
+      datum,
+      radno_vreme_pocetak,
+      radno_vreme_kraj,
+      ukupni_sati,
+      opis_posla,
+      status_kvara
+    });
+
+    const saved = await newEvidencija.save();
+    res.status(201).json({ message: 'Evidencija sacuvana!', data: saved });
+
+  } catch (error) {
+    res.status(400).json({ message: 'Geska pri zapisu!', error: error.message });
+  }
+});
