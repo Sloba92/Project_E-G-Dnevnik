@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const EvidencijaModel = require('../../models/EvidencijaModel');
 
-router.post('/controllers/pages/renderIndex.js', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const {
       izvodjac_radova,
@@ -40,3 +40,5 @@ router.post('/controllers/pages/renderIndex.js', async (req, res) => {
     res.status(400).json({ message: 'Geska pri zapisu!', error: error.message });
   }
 });
+
+module.exports = router;

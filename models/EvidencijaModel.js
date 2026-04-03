@@ -9,7 +9,7 @@ const Evidencija = new Schema({
     datum: { type: Date, required: true },
     radno_vreme_pocetak: { type: String, required: true },
     radno_vreme_kraj: { type: String, required: true },
-    ukupni_sati: { type: Number, required: true },
+    ukupni_sati: { type: String, required: true },
     opis_posla: { type: String, required: true },
     status_kvara: { type: String, required: true }
 });
