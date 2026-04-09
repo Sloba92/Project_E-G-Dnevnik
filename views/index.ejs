@@ -228,11 +228,13 @@
                         <form class="dashboard-form" action="/index" method="post">
                             <div class="form-group">
                                 <label for="izvodjac_name">Izvođač radova:</label>
-                                <input type="text" id="izvodjac_name" name="izvodjac_radova" placeholder="Unesi naziv izvođača..." required>
+                                <input type="text" id="izvodjac_name" name="izvodjac_radova"
+                                    placeholder="Unesi naziv izvođača..." required>
                             </div>
                             <div class="form-group">
                                 <label for="objekat_name">Objekat:</label>
-                                <input type="text" id="objekat_name" name="objekat" placeholder="Unesi objekat..." required>
+                                <input type="text" id="objekat_name" name="objekat" placeholder="Unesi objekat..."
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="mesto">Mesto:</label>
@@ -240,7 +242,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="investitor_name">Investitor:</label>
-                                <input type="text" id="investitor_name" name="investitor" placeholder="Unesi investitora..." required>
+                                <input type="text" id="investitor_name" name="investitor"
+                                    placeholder="Unesi investitora..." required>
                             </div>
                             <div class="form-group">
                                 <label for="dan">Dan:</label>
@@ -259,19 +262,23 @@
                                 <input type="date" id="datum" name="datum" required>
                             </div>
                             <div class="form-group">
-                                <label for="radno_vreme_start">Radno vreme od:</label>
-                                <input type="time" id="radno_vreme_start" name="radno_vreme_pocetak" onchange="racunajSate()" required>
+                                <label for="radno_vreme_od">Radno vreme od:</label>
+                                <input type="time" id="radno_vreme_od" name="radno_vreme_pocetak"
+                                    onchange="racunajSate()" required>
                             </div>
                             <div class="form-group">
                                 <label for="radno_vreme_do">Radno vreme do:</label>
-                                <input type="time" id="radno_vreme_do" name="radno_vreme_kraj" onchange="racunajSate()" required>
+                                <input type="time" id="radno_vreme_do" name="radno_vreme_kraj" onchange="racunajSate()"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Ukupni sati:</label>
+                                <input type="text" id="ukupni_sati" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="podizvodjac_radova_name">Podizvođač radova:</label>
-                                <button type="button" class="btn btn-primary">Unesi podizvođača...</button>
-                            </div>
-                            <div class="form-group">
-                                <p id="ispis" name="ukupni_sati"></p>
+                                <textarea name="podizvodjac_radova_name" id="podizvodjac_radova_name"
+                                    placeholder="Unesi podatke o podizvodjacu..." rows="4" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="opis_posla">Opis posla:</label>

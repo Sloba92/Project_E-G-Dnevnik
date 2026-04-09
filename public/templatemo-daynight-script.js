@@ -44,9 +44,9 @@ function setGreeting() {
 
 // ===== Hours Calculator (index.html) =====
 function racunajSate() {
-    const start = document.getElementById('radno_vreme_start');
+    const start = document.getElementById('radno_vreme_od');
     const end = document.getElementById('radno_vreme_do');
-    const output = document.getElementById('ispis');
+    const output = document.getElementById('ukupni_sati');
     if (!start || !end || !output) return;
 
     if (!start.value || !end.value) {
@@ -59,7 +59,7 @@ function racunajSate() {
     let diff = (eh * 60 + em) - (sh * 60 + sm);
     if (diff < 0) diff += 24 * 60;
 
-    output.textContent = `Provedeni sati: ${(diff / 60).toFixed(2)}`;
+    output.value = `Provedeni sati: ${(diff / 60).toFixed(2)}`;
 }
 
 // ===== Mobile Menu =====

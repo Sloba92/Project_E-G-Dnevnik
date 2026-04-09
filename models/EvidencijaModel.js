@@ -10,9 +10,10 @@ const Evidencija = new Schema({
     radno_vreme_pocetak: { type: String, required: true },
     radno_vreme_kraj: { type: String, required: true },
     ukupni_sati: { type: String, required: true },
+    podizvodjac_radova_name: { type: String, required: true },
     opis_posla: { type: String, required: true },
     status_kvara: { type: String, required: true }
 });
 
-const EvidencijaModel = model ('Evidencija', Evidencija);
+const EvidencijaModel = model('Evidencija', Evidencija);
 module.exports = EvidencijaModel;

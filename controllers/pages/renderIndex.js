@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
       radno_vreme_pocetak,
       radno_vreme_kraj,
       ukupni_sati,
+      podizvodjac_radova_name,
       opis_posla,
       status_kvara
     } = req.body;
@@ -29,6 +30,7 @@ router.post('/', async (req, res) => {
       radno_vreme_pocetak,
       radno_vreme_kraj,
       ukupni_sati,
+      podizvodjac_radova_name,
       opis_posla,
       status_kvara
     });

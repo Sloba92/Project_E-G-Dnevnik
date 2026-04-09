@@ -228,8 +228,8 @@
         <main class="main-content">
             <div class="page-header page-header-actions">
                 <div>
-                    <h1 class="greeting">Objekti</h1>
-                    <p class="greeting-sub">Upravljanje građevinskim objektima...</p>
+                    <h1 class="greeting">Dnevnici</h1>
+                    <p class="greeting-sub">Upravljanje e-dnevnikom...</p>
                 </div>
                 <button class="btn btn-primary" onclick="openModal()">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -244,38 +244,10 @@
             <div class="objekti-grid">
 
                 <div class="form-card">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Lista Objekata</h3>
-                            <p class="card-subtitle">Klikni na objekat za detalje</p>
-                        </div>
-                        <div class="search-wrap">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="7" />
-                                <line x1="16.5" y1="16.5" x2="21" y2="21" />
-                            </svg>
-                            <input type="text" id="search-obj" placeholder="Pretraži objekte..."
-                                oninput="searchObjekti()">
-                        </div>
-                        <div class="obj-count" id="obj-count">0 objekata</div>
-                        <div class="obj-list" id="obj-list">
-                            <div class="obj-empty">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                    <polyline points="9 22 9 12 15 12 15 22" />
-                                </svg>
-                                Nema unetih objekata
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-card">
                     <div class="card" id="detail-card">
                         <div class="card-header">
-                            <h3 class="card-title">Detalji Objekta</h3>
-                            <p class="card-subtitle">Odaberi objekat sa liste</p>
+                            <h3 class="card-title">Lista zapisnika</h3>
+                            <p class="card-subtitle">Odaberi zapisnik sa liste</p>
                         </div>
                         <div class="empty-detail" id="detail-empty">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -308,31 +280,31 @@
                             </div>
                             <div class="detail-grid">
                                 <div class="detail-field"><label>Naziv objekta</label>
-                                    <p id="d-naziv">—</p>
+                                    <p id="d-naziv">a</p>
                                 </div>
                                 <div class="detail-field"><label>Mesto</label>
-                                    <p id="d-mesto">—</p>
+                                    <p id="d-mesto">b</p>
                                 </div>
                                 <div class="detail-field"><label>Adresa</label>
-                                    <p id="d-adresa">—</p>
+                                    <p id="d-adresa">c</p>
                                 </div>
                                 <div class="detail-field"><label>Datum početka</label>
-                                    <p id="d-pocetak">—</p>
+                                    <p id="d-pocetak">d</p>
                                 </div>
                                 <div class="detail-field"><label>Investitor</label>
-                                    <p id="d-investitor">—</p>
+                                    <p id="d-investitor">e</p>
                                 </div>
                                 <div class="detail-field"><label>Izvođač</label>
-                                    <p id="d-izvodjac">—</p>
+                                    <p id="d-izvodjac">f</p>
                                 </div>
                             </div>
                             <div class="detail-field detail-field-note"><label>Napomena</label>
-                                <p id="d-napomena">—</p>
+                                <p id="d-napomena">f</p>
                             </div>
                             <div class="dnevnici-mini">
                                 <div class="dnevnici-mini-title">Poslednji dnevnici</div>
                                 <div class="dnevnik-mini-row">
-                                    <span class="dnevnik-mini-date">—</span>
+                                    <span class="dnevnik-mini-date">eee</span>
                                     <span class="dnevnik-mini-note">Povežite se sa bazom podataka</span>
                                 </div>
                             </div>

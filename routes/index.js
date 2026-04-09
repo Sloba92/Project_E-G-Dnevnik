@@ -3,7 +3,8 @@ const router = Router();
 
 router.get("/", require('./home'));
 router.use("/index", require('./unos'));
-router.get("/projects", require("../controllers/pages/renderProjects.js"));
+router.use("/projects", require("./dnevnici"));
+
 router.get("/inbox", require("../controllers/pages/renderInbox.js"));
 router.get("/analytics", require("../controllers/pages/renderAnalytics.js"));
 router.get("/settings", require("../controllers/pages/renderSettings.js"));
