@@ -1,5 +1,10 @@
 
-const renderInbox = (req, res) => { 
-    res.render("inbox");
+const mogojs = require('mongojs');
+const db = mogojs('ednevnik',['evidencijas'])
+
+const ucitajDnevnike = (req, res) => { 
+    db.evidencijas.find({}, (err, evidencija) => {
+        res.render('inbox', {evidencija: evidencija});
+    })
 }
-module.exports = renderInbox;
+module.exports = ucitajDnevnike;

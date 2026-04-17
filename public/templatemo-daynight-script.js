@@ -44,8 +44,8 @@ function setGreeting() {
 
 // ===== Hours Calculator (index.html) =====
 function racunajSate() {
-    const start = document.getElementById('radno_vreme_od');
-    const end = document.getElementById('radno_vreme_do');
+    const start = document.getElementById('radno_vreme_pocetak');
+    const end = document.getElementById('radno_vreme_kraj');
     const output = document.getElementById('ukupni_sati');
     if (!start || !end || !output) return;
 
@@ -60,6 +60,32 @@ function racunajSate() {
     if (diff < 0) diff += 24 * 60;
 
     output.value = `Provedeni sati: ${(diff / 60).toFixed(2)}`;
+}
+
+function disReadOnly() {
+
+    const izvodjac_radova = document.querySelector('#izvodjac_radova');
+            izvodjac_radova.removeAttribute('readonly');
+    const objekat = document.querySelector('#objekat');
+            objekat.removeAttribute('readonly');
+    const mesto = document.querySelector('#mesto');
+            mesto.removeAttribute('readonly');
+    const investitor = document.querySelector('#investitor');
+            investitor.removeAttribute('readonly');
+    const dan = document.querySelector('#dan');
+            dan.removeAttribute('readonly');
+    const datum = document.querySelector('#datum');
+            datum.removeAttribute('readonly');
+    const radno_vreme_pocetak = document.querySelector('#radno_vreme_pocetak');
+            radno_vreme_pocetak.removeAttribute('readonly');
+    const radno_vreme_kraj = document.querySelector('#radno_vreme_kraj');
+            radno_vreme_kraj.removeAttribute('readonly');
+    const podizvodjac_radova_name = document.querySelector('#podizvodjac_radova_name');
+            podizvodjac_radova_name.removeAttribute('readonly');
+    const opis_posla = document.querySelector('#opis_posla');
+            opis_posla.removeAttribute('readonly');
+    const status_kvara = document.querySelector('#status_kvara');
+            status_kvara.removeAttribute('readonly');
 }
 
 // ===== Mobile Menu =====
@@ -89,12 +115,6 @@ function initKanban() {
             if (dragging) col.appendChild(dragging);
         });
     });
-}
-
-// ===== Analytics — Filter, Export =====
-function filterTable() {
-    // Connect to your backend/database here
-    alert('Primeni filter — povežite sa bazom podataka.');
 }
 
 function exportCSV() {
@@ -220,33 +240,6 @@ function closeModal(e) {
     }
 }
 
-function saveObjekat() {
-    const naziv = document.getElementById('m-naziv')?.value.trim();
-    if (!naziv) { alert('Naziv objekta je obavezan!'); return; }
-
-    const o = {
-        naziv,
-        adresa: document.getElementById('m-adresa').value.trim(),
-        mesto: document.getElementById('m-mesto').value.trim(),
-        investitor: document.getElementById('m-investitor').value.trim(),
-        izvodjac: document.getElementById('m-izvodjac').value.trim(),
-        status: document.getElementById('m-status').value,
-        pocetak: document.getElementById('m-pocetak').value,
-        napomena: document.getElementById('m-napomena').value.trim(),
-    };
-
-    const form = document.getElementById('modal-form');
-    if (form.dataset.editIdx !== undefined) {
-        objekti[parseInt(form.dataset.editIdx)] = o;
-    } else {
-        objekti.push(o);
-    }
-
-    localStorage.setItem('egdnevnik_objekti', JSON.stringify(objekti));
-    closeModal();
-    renderList();
-    if (selectedIdx !== null) selectObjekat(selectedIdx);
-}
 
 function editObjekat(idx) { openModal(idx); }
 function editSelected() { if (selectedIdx !== null) openModal(selectedIdx); }
