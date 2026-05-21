@@ -189,67 +189,77 @@
                         <form class="dashboard-form">
                             <div class="form-group">
                                 <label for="izvodjac_radova">Izvođač radova:</label>
-                                <input type="text" id="izvodjac_radova" <%= edit ? '' : 'readonly'%> name="izvodjac_radova"
-                                    placeholder="Unesi naziv izvođača..." value=" <%= evidencija.izvodjac_radova %>" readonly>
+                                <input type="text" id="izvodjac_radova" name="izvodjac_radova"
+                                    placeholder="Unesi naziv izvođača..." value=" <%= evidencija.izvodjac_radova %>"
+                                    <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="objekat">Objekat:</label>
                                 <input type="text" id="objekat" name="objekat" placeholder="Unesi objekat..."
-                                    value=" <%= evidencija.objekat %>" readonly>
+                                    value=" <%= evidencija.objekat %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="mesto">Mesto:</label>
                                 <input type="text" id="mesto" name="mesto" placeholder="Unesi naziv mesta..."
-                                    value=" <%= evidencija.mesto %>" readonly>
+                                    value=" <%= evidencija.mesto %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="investitor">Investitor:</label>
-                                <input type="text" id="investitor" name="investitor"
-                                    placeholder="Unesi investitora..." value=" <%= evidencija.investitor %>" readonly>
+                                <input type="text" id="investitor" name="investitor" placeholder="Unesi investitora..."
+                                    value=" <%= evidencija.investitor %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="dan">Dan:</label>
                                 <input type="text" id="dan" name="dan" placeholder="Dan u nedelji..."
-                                    value=" <%= evidencija.dan %>" readonly>
+                                    value=" <%= evidencija.dan %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="datum">Datum:</label>
                                 <input type="date" id="datum" name="datum"
-                                    value="<%=evidencija.datum?.toISOString().slice(0,10) %>" readonly>
+                                    value="<%=evidencija.datum?.toISOString().slice(0,10) %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="radno_vreme_pocetak">Radno vreme od:</label>
                                 <input type="time" id="radno_vreme_pocetak" name="radno_vreme_pocetak"
-                                    onchange="racunajSate()" value="<%=evidencija.radno_vreme_pocetak %>" readonly>
+                                    onchange="racunajSate()" value="<%=evidencija.radno_vreme_pocetak %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label for="radno_vreme_kraj">Radno vreme do:</label>
-                                <input type="time" id="radno_vreme_kraj" name="radno_vreme_kraj" onchange="racunajSate()"
-                                    value="<%=evidencija.radno_vreme_kraj %>" readonly>
+                                <input type="time" id="radno_vreme_kraj" name="radno_vreme_kraj"
+                                    onchange="racunajSate()" value="<%=evidencija.radno_vreme_kraj %>" <%- edit ? '' : 'readonly' %> >
                             </div>
                             <div class="form-group">
                                 <label>Ukupni sati:</label>
                                 <input type="text" id="ukupni_sati" name="ukupni_sati"
-                                    value=" <%=evidencija.ukupni_sati %>" readonly>
+                                    value=" <%=evidencija.ukupni_sati %>" readonly >
                             </div>
                             <div class="form-group">
                                 <label for="podizvodjac_radova_name">Podizvođač radova:</label>
                                 <textarea name="podizvodjac_radova_name" id="podizvodjac_radova_name"
-                                    placeholder="Unesi podatke o podizvodjacu..."
-                                    rows="4" readonly><%=evidencija.podizvodjac_radova_name %></textarea>
+                                    placeholder="Unesi podatke o podizvodjacu..." rows="4"
+                                    <%- edit ? '' : 'readonly' %> ><%=evidencija.podizvodjac_radova_name %></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="opis_posla">Opis posla:</label>
-                                <textarea name="opis_posla" id="opis_posla" placeholder="Unesi opis posla..."
-                                    rows="6" readonly><%=evidencija.opis_posla %></textarea>
+                                <textarea name="opis_posla" id="opis_posla" placeholder="Unesi opis posla..." rows="6"
+                                    <%- edit ? '' : 'readonly' %> ><%=evidencija.opis_posla %></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="status_kvara">Status kvara:</label>
-                                <input type="text" id="status_kvara" name="status_kvara" placeholder="Status..."
-                                    value=" <%= evidencija.status_kvara %>" readonly>
+                                <select id="status_kvara" name="status_kvara" <%- edit ? '' : 'readonly' %> >
+                                    <option value="" selected disabled>Odaberi status...</option>
+                                    <option value="potpunosti">Otklonjen u potpunosti</option>
+                                    <option value="delimicno">Otklonjen delimično</option>
+                                    <option value="nije">Nije otklonjen, neophodni dodatni radovi</option>
+                                </select>
                             </div>
                             <div class="btn-row">
-                                <button id="projects_edit" type="button" class="btn btn-primary">Edituj</button>
+                                <% if (edit) { %>
+                                <button id="projects_edit" type="button" class="btn btn-primary">Sacuvaj</button>
+                                <% } else { %>
+                                <button id="projects_edit" type="button" class="btn btn-primary"
+                                    onclick="window.location.href='/dnevnici/<%= evidencija._id %>?edit=true'">Edituj</button>
+                                <%  } %>
                             </div>
                         </form>
                     </div>
