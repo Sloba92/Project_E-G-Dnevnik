@@ -258,10 +258,13 @@
                             <div class="form-group">
                                 <label for="status_kvara">Status kvara:</label>
                                 <select id="status_kvara" name="status_kvara" <%- edit ? '' : 'readonly' %> >
-                                    <option value="" selected disabled>Odaberi status...</option>
-                                    <option value="potpunosti">Otklonjen u potpunosti</option>
-                                    <option value="delimicno">Otklonjen delimično</option>
-                                    <option value="nije">Nije otklonjen, neophodni dodatni radovi</option>
+                                    <option value="" disabled>Odaberi status...</option>
+                                    <option value="potpunosti" <%- evidencija.status_kvara==='potpunosti' ? 'selected'
+                                        : '' %> >Otklonjen u potpunosti</option>
+                                    <option value="delimicno" <%- evidencija.status_kvara==='delimicno' ? 'selected'
+                                        : '' %> >Otklonjen delimično</option>
+                                    <option value="nije" <%- evidencija.status_kvara==='nije' ? 'selected' : '' %> >Nije
+                                        otklonjen, neophodni dodatni radovi</option>
                                 </select>
                             </div>
                             <div class="btn-row">
@@ -269,7 +272,7 @@
                                     <button id="projects_edit" type="button" class="btn btn-primary">Sacuvaj</button>
                                     <% } else { %>
                                         <button id="projects_edit" type="button" class="btn btn-primary"
-                                            onclick="window.location.href='/dnevnici/<%= evidencija._id %>?edit=true'">Edituj</button>
+                                            onclick="window.location.href='/evidencija/<%= evidencija._id %>?edit=true'">Edituj</button>
                                         <% } %>
                             </div>
                         </form>
@@ -282,8 +285,56 @@
             <p>&copy; 2026 DayNight Admin. Designed by <a href="https://www.templatemo.com" target="_blank"
                     rel="nofollow">TemplateMo</a></p>
         </footer>
+
+         <script src="/templatemo-daynight-script.js"></script>
+
     </div>
-    <script src="/templatemo-daynight-script.js"></script>
+
+    <% if (edit) { %>
+       
+
+        <script>
+            document.getElementById('projects_edit').addEventListener('click', async () => {
+                const id = '<%= evidencija._id %>';
+
+                const body = {
+                    izvodjac_radova: document.getElementById('izvodjac_radova').value.trim(),
+                    objekat: document.getElementById('objekat').value.trim(),
+                    mesto: document.getElementById('mesto').value.trim(),
+                    investitor: document.getElementById('investitor').value.trim(),
+                    dan: document.getElementById('dan').value.trim(),
+                    datum: document.getElementById('datum').value,
+                    radno_vreme_pocetak: document.getElementById('radno_vreme_pocetak').value,
+                    radno_vreme_kraj: document.getElementById('radno_vreme_kraj').value,
+                    ukupni_sati: document.getElementById('ukupni_sati').value.trim(),
+                    podizvodjac_radova_name: document.getElementById('podizvodjac_radova_name').value.trim(),
+                    opis_posla: document.getElementById('opis_posla').value.trim(),
+                    status_kvara: document.getElementById('status_kvara').value
+                };
+
+                try {
+                    const res = await fetch(`evidencija/${id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'aplication/json' },
+                        body: JSON.stringify(body)
+                    });
+
+                    const data = await res.json();
+
+                    if (res.ok) {
+                        alert(data.message),
+                            window.location.href = '/sviDnevnici';
+                    } else {
+                        alert('Greska: ' + data.message);
+                    }
+                } catch (err) {
+                    alert('Greska pri slanju: ' + err.message);
+                }
+            });
+
+        </script>
+        <% } %>
+
 </body>
 
 </html>
